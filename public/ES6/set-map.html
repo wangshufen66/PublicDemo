@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- https://mp.weixin.qq.com/s/KsoSwA73PzGwYMqZOwUvNQ -->
+  </body>
+  <script>
+    // 构造函数 new 操作符的执行步骤如下：
+    // 1.创建一个对象
+    // 2.将构造函数的作用域赋给新对象（也就是将对象的__proto__属性指向构造函数的prototype属性）
+    // 3.指向构造函数中的代码，构造函数中的this指向该对象（也就是为这个对象添加属性和方法）
+    // 4.返回新的对象
+    // 实际上第二步就是将函数中的this指向该对象。但是由于箭头函数时没有自己的this的，且this指向外层的执行环境，且不能改变指向，所以不能当做构造函数使用。
+
+    // const KEY = {
+    //   alibaba: Symbol(),
+    //   baidu: Symbol(),
+    //   tencent: Symbol(),
+    // };
+    // function getValue(key) {
+    //   switch (key) {
+    //     case KEY.alibaba:
+    //       console.log('alibaba');
+    //     case KEY.baidu:
+    //       console.log('baidu');
+    //   }
+    // }
+    // getValue(KEY.baidu);
+
+    // 属性和方法	概述
+    // size	返回集合的元素个数
+    // add	增加一个新的元素，返回当前的集合
+    // delete	删除元素，返回布尔值
+    // has	检查集合中是否包含某元素，返回布尔值
+    // clear	清空集合，返回undefined
+
+    //创建一个空集合
+    let s = new Set();
+    //创建一个非空集合
+    let s1 = new Set([1, 2, 3, 1, 2, 3]);
+    //返回集合的元素个数
+    console.log(s1.size); // 3
+    //添加新元素
+    console.log(s1.add(4)); // {1,2,3,4}
+    //删除元素
+    console.log(s1.delete(1)); //true
+    //检测是否存在某个值
+    console.log(s1.has(2)); // true
+    //清空集合
+    console.log(s1.clear()); //undefined
+
+    // 模拟求交集
+    let intersection = new Set([...set1].filter((x) => set2.has(x)));
+
+    // 模拟求差集
+    let difference = new Set([...set1].filter((x) => !set2.has(x)));
+
+    // Set集合转化为数组
+    const arr = [...mySet];
+    const arr2 = Array.from(mySet);
+
+    // 数组转化为Set集合
+
+    // Map
+    // 属性和方法	概述
+    // size	返回Map的元素个数
+    // set	增加一个新的元素，返回当前的Map
+    // get	返回键名对象的键值
+    // has	检查Map中是否包含某元素，返回布尔值
+    // clear	清空Map，返回undefined
+    //创建一个空 map
+    let m = new Map();
+    //创建一个非空 map
+    let m2 = new Map([['name', 'hello']]);
+    //获取映射元素的个数
+    console.log(m2.size); // 1
+    //添加映射值
+    console.log(m2.set('age', 6)); // {"name" => "hello", "age" => 6}
+    //获取映射值
+    console.log(m2.get('age')); // 6
+    //检测是否有该映射
+    console.log(m2.has('age')); // true
+    //清除
+    console.log(m2.clear()); // undefined
+    const mySet = new Set(arr);
+  </script>
+</html>
