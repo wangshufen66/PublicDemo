@@ -15,6 +15,7 @@
     "allowUnreachableCode": true,
     "noPropertyAccessFromIndexSignature": true,
     "exactOptionalPropertyTypes": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "lib": ["es2018","DOM"]
   }
 }

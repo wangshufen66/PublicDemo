@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // class Person {
+    //   run() {
+    //     console.log('跑步1');
+    //   }
+    // }
+
+    // Person.prototype.run = function () {
+    //   console.log('跑步2');
+    // };
+
+    // const p = new Person();
+
+    // p.run(); // '跑步2'
+
+    // const obj = new Object();
+    // // 实例对象的隐式原型指向它的构造函数的原型对象
+    // obj.__proto__ === Object.prototype;
+    // // Object 本身是原生引用类型也就是对象，而对象都拥有隐式原型，同时 Object 又是原生构造函数，而函数都是 Function 的实例，可以简单理解为 Object 是通过构造函数 Function 实例化实现。
+    // Object.__proto__ === Function.prototype;
+    // // 原型对象本质是对象，而对象是通过原生构造函数 Object 实例化实现的
+    // Function.prototype.__proto__ === Object.prototype;
+
+    // Object.__proto__.__proto__ === Object.prototype;
+    // // 宇宙的尽头
+    // Object.prototype.__proto__ === null;
+
+    // typeof Object === 'function'; // true
+    // typeof Array === 'function'; // true
+    // typeof Function === 'function'; // true
+    // typeof String === 'function'; // true
+    // typeof Number === 'function'; // true
+    // typeof Boolean === 'function'; // true
+    // typeof Date === 'function'; // true
+    // typeof RegExp === 'function'; // true
+    // typeof Map === 'function'; // true
+    // typeof WeakMap === 'function'; // true
+    // typeof Set === 'function'; // true
+    // typeof Symbol === 'function'; // true
+    // typeof BigInt === 'function'; // true
+
+    // Object instanceof Function === true; // true
+    // Function instanceof Function === true; // true
+    // String instanceof Function === true; // true
+    // Number instanceof Function === true; // true
+    // Boolean instanceof Function === true; // true
+    // Date instanceof Function === true; // true
+    // RegExp instanceof Function === true; // true
+    // Map instanceof Function === true; // true
+    // WeakMap instanceof Function === true; // true
+    // Set instanceof Function === true; // true
+    // Symbol instanceof Function === true; // true
+    // BigInt instanceof Function === true; // true
+
+    // const txt = new String('Coboy');
+    // // 实例对象的隐式原型指向它的构造函数的原型对象
+    // txt.__proto__ === String.prototype;
+    // // String 本身是原生的引用类型，也就是 String 可以看成是对象，所以拥有隐式原型，又因为 String 是原生构造函数，而每一个函数都是 Function 的类型实例，所以 String 的隐式原型就指向了构造函数 Function 的原型对象
+    // String.__proto__ === Function.prototype;
+    // // 原型对象的本质是对象，所以原型对象也拥有隐式原型，因为对象是通过构造函数 Object 实现的，所以 Function 的原型对象的隐式原型就指向 Object 的原型对象
+    // Function.prototype.__proto__ === Object.prototype;
+    // String.prototpe.__proto__ === Object.prototype;
+    // // 宇宙的尽头
+    // Object.prototype.__proto__ === null;
+
+    // //有意思的一个类型 Function
+    // Function.__proto__ === Function.prototype;
+    // // 接下来跟上文一样
+    // Function.prototype.__proto__ === Object.prototype;
+    // Object.prototype.__proto__ === null;
+
+    // const fn = function () {};
+    // // 因为每个函数都是 Function 的实例，函数实例对象 fn 的隐式原型指向它的构造函数的原型对象
+    // fn.__proto__ === Function.prototype; // true
+    // // 接下来跟上文一样
+    // Function.prototype.__proto__ === Object.prototype;
+    // Object.prototype.__proto__ === null;
+
+    //     其他原生构造函数的原型与原型链关系
+    // String 作为字符串的构造函数对象，String 也是通过的 Function 的实例化而来。
+    // 所以：String.__proto__ === Function.prototype
+    // Number 作为数字的构造函数对象，Number 也是通过 Function 的实例化而来。
+    // 所以：Number.__proto__ === Function.prototype
+    // Boolean 作为布尔类型的构造函数对象，Boolean 也是通过 Function 的实例化而来。
+    // 所以：Boolean.__proto__ === Function.prototype
+    // 同样其它的：
+    // Map.__proto__ === Function.prototype
+    // WeakMap.__proto__ === Function.prototype
+    // Set.__proto__ === Function.prototype
+
+    function Fn1() {
+      this.age = 18;
+      this.getAge1 = function () {
+        return this.age + 1;
+      };
+    }
+    Fn1.prototype.getAge = function () {
+      return this.age;
+    };
+
+    function Fn2() {}
+    // 让构造函数 Fn2 的原型对象等于构造函数 Fn1 的实例对象
+    Fn2.prototype = new Fn1();
+
+    const fn2 = new Fn2();
+    fn2.age; // 18
+    fn2.getAge(); // 18
+    console.log(fn2.age, fn2.getAge1(), fn2.getAge());
+    new 操作符背后做了什么();
+
+    // 创建一个新的空对象
+    // 让新的空对象的隐式原型（__proto__）指向构造函数的原型对象（prototype）
+    // 让新的空对象的作用域指向构造函数的作用域，也就是改变构造函数的 this 指向新的空对象
+    // 执行构造函数并返回结果，判断返回的结果如果是对象则返回，否则返回新创建的对象
+
+
+    
+  </script>
+</html>
