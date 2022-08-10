@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const test = [
+        { name: '小明', age: 18, color: 'red' },
+        { name: '小黄', age: 19, color: 'yellow' },
+        { name: '小黑', age: 17, color: 'black' },
+        { name: '小绿', age: '21', color: 'green' },
+      ];
+
+      function zms_3(max) {
+        console.log('max', max);
+        for (let num = 100; num <= max; num++) {
+          let a = num % 10; //个位数
+          let b = parseInt((num % 100) / 10); //十位数
+          let c = parseInt(num / 100); //百位数
+          // console.log('abc',a * a * a,b * b * b,c * c * c);
+          if (num === a * a * a + b * b * b + c * c * c) {
+            console.log(num + ',');
+          }
+        }
+      }
+      // zms_3(153);
+
+      function zms(min, max) {
+        let array = new Array();
+        for (let num = min; num < max; num++) {
+          let x = 0;
+          let numStr = String(num);
+          let n = numStr.length;
+          for (let i = 0; i < n; i++) {
+            x += Math.pow(numStr[i], n); //Math.pow('x', n) x的n次方
+          }
+          if (num === x) {
+            array.push(num);
+          }
+        }
+        return array;
+      }
+      let result = zms(100, 10000);
+      console.log(result);
+    </script>
+  </body>
+</html>

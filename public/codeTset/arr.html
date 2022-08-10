@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div>TTTT</div>
+  </body>
+  <script>
+    //   console.log('test!!!');
+
+    //     let list = [
+    //       {
+    //         id: 'A1',
+    //         name: '南京',
+    //         code: 'A',
+    //       },
+    //       {
+    //         id: 'B2',
+    //         name: '无锡',
+    //         code: 'B',
+    //       },
+    //       {
+    //         id: 'C3',
+    //         name: '徐州',
+    //         code: 'C',
+    //       },
+    //       {
+    //         id: 'D4',
+    //         name: '常州',
+    //         code: 'D',
+    //       },
+    //       {
+    //         id: 'E5',
+    //         name: '苏州',
+    //         code: 'E',
+    //       },
+    //     ];
+    //     // prop 指定使用哪个属性的值作为 key
+    //     //   function transformListToMap(list, prop) {
+    //     //     const map = {};
+    //     //     if (!prop) return map;
+    //     //     list.forEach((item) => {
+    //     //       map[String(item[prop])] = item;
+    //     //     });
+    //     //     console.log(map);
+    //     //     return map;
+    //     //   }
+    //     //   const newMap = transformListToMap(list, 'id');
+    //     //   console.log(newMap);
+
+    //     // 这是上一期写的 is 系列函数，在文章最底部有链接
+    //     function isFunction(value) {
+    //       return typeof value === 'function';
+    //     }
+    //     function isDefined(value) {
+    //       return value !== undefined && value !== null;
+    //     }
+    //     // 第二个参数同时支持传入一个函数，以支持返回任意处理的值作为 key
+    //     // 增加第三个参数，拓展支持传入一个函数以处理任意的值作为 value
+    //     function transformListToMap(list, prop, accessor) {
+    //       const map = {};
+    //       if (!isDefined(prop)) return map;
+    //       // 统一处理成读取函数
+    //       const propAccessor = isFunction(prop) ? prop : (item) => item[prop];
+    //       list.forEach((item) => {
+    //         const key = propAccessor(item);
+    //         // 防止传入不规范函数出现 null 或 undefined，让其静默失效
+    //         if (isDefined(key)) {
+    //           map[key] = item;
+    //           //   map[key] = accessor(item);
+    //         }
+    //       });
+    //       //   console.log(map);
+    //       return map;
+    //     }
+    //     transformListToMap(list, 'id');
+
+    //     // console.log(list.splice(3, 1)[0]);
+    //     // console.log(list);
+    //
+  </script>
+
+  <!-- <script>
+    let index = 1;
+    // console.log(~index);
+    if (~index) {
+      //   console.log(9999);
+    }
+
+    const removedSet = new Set([1, 4, 6]);
+    console.log(removedSet);
+    console.log(removedSet.constructor);
+    console.log(Object.prototype.toString.call(removedSet));
+
+    originArray.forEach((item) => (filterFn(item) ? removedItems : array).push(item));
+  </script>
+   -->
+
+  <script>
+    const arr = [
+      { type: 'a', name: 'x', count: 10 },
+      { type: 'a', name: 'y', count: 11 },
+      { type: 'a', name: 'x', count: 12 },
+      { type: 'a', name: 'y', count: 13 },
+      { type: 'b', name: 'x', count: 14 },
+      { type: 'b', name: 'y', count: 15 },
+    ];
+    const record = {};
+
+    arr.forEach(({ type, name, count }) => {
+      if (!record[type]) {
+        record[type] = {};
+        //record:{a:{}}
+      }
+
+      const typeRecord = record[type];
+
+      if (!typeRecord[name]) {
+        typeRecord[name] = 0;
+        //record:{a:{x:0}}
+      }
+
+      typeRecord[name] += count;
+    });
+    console.log(record);
+    console.log(record.a.x); // 22
+  </script>
+</html>
