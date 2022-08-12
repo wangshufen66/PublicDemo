@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [1, 2, 3];
+      var obj = { a: 1 };
+      console.log(Array.isArray(arr));
+      console.log(arr instanceof Array);
+      console.log(arr.constructor === Array);
+      console.log(Object.prototype.toString.call(arr) === '[object Array]');
+      console.log(Object.prototype.toString.call(arr));
+      console.log('33', obj.__proto__ === Object.prototype);
+      console.log('44', arr.__proto__ === Array.prototype);
+      console.log('55', arr.constructor === arr.__proto__.constructor);
+      //   console.log('66',arr.constructor);
+
+      //   因此，可以用下列函数，来获取任意变量的[[Class]]属性：
+      function getClass(a) {
+        const str = Object.prototype.toString.call(a);
+        return /^\[object (.*)\]$/.exec(str)[1];
+      }
+    </script>
+  </body>
+</html>
