@@ -1,0 +1,16 @@
+.example8{
+    position: relative;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+.example8 .con{
+    position: relative;
+    transform: translate(-50%,-50%);
+    font-size: 15px;
+    background: #afddf3;
+    left: 50%;
+    top: 50%;
+}

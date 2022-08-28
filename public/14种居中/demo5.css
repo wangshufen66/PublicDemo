@@ -1,0 +1,15 @@
+。example5{
+    display: table;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+.example .con{
+    display: table-cell;
+    vertical-align: middle;
+    width: 300px;
+    background:  #afddf3;
+    font-size: 13px;
+}

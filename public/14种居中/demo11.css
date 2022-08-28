@@ -1,0 +1,20 @@
+。example11 {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+
+}
+.example11:before {
+    content: '';
+    flex-grow: .5;
+}
+.example11 .con{
+    background: #afddf3;
+    font-size: 15px;
+
+
+}

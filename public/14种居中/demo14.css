@@ -1,0 +1,21 @@
+。example14 {
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;;
+    border: 1px solid #dcdcdc;
+}
+.example14:before, .example14:after{
+    content: "";
+    display: block;
+    width: 100%;
+}
+.example14 .con{
+    height: 80px;
+    width: 300px;
+    background: #afddf3;
+    font-size: 15px;
+}
