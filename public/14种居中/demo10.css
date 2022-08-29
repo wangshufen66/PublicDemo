@@ -1,0 +1,14 @@
+。example10{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+。example .con {
+    font-size: 15px;
+    background: #afddf3;
+    height: 80px;
+}

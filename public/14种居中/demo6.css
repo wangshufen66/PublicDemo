@@ -1,0 +1,17 @@
+.example6 {
+    position: relative;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+.example6 .con{
+    top: 50%;
+    height: 80px;
+    margin-top: -40px;
+    width: 300px;
+    font-size: 15px;
+    background: #afddf3;
+    position: absolute;
+}

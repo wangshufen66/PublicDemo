@@ -1,0 +1,13 @@
+.example9 {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+。example9 .con{
+    background: #afddf3;
+    font-size: 15px;
+}

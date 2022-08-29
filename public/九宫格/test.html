@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style type="text/css">
+      div {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        padding: 10px;
+        border: 10px solid #888;
+      }
+      #bs {
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <div id="bs"></div>
+    <script>
+      let myInstanceof = (target, origin) => {
+        while (target) {
+          if (target.__proto__ === origin.prototype) {
+            return true;
+          }
+          target = target.__proto__;
+        }
+        return false;
+      };
+      let a = [1, 2, 3];
+      console.log(myInstanceof(a, Array)); // true
+      console.log(myInstanceof(a, Object)); // true
+      console.log(a.__proto__ === Array.prototype);//true
+      console.log(a.__proto__.__proto__ === Object.prototype);//true
+    </script>
+  </body>
+</html>

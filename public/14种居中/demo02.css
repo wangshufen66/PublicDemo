@@ -1,0 +1,14 @@
+.example2{
+    width: 400px;
+    border: 1px solid #dcdcdc;
+    line-height: 100px;
+    font-size: 0;
+}
+.example2 .con{
+    display: inline-block;
+    line-height: 2;
+    vertical-align: middle;
+    font-size: 15px;
+    background: #afddf3;
+    width: 300px;
+}

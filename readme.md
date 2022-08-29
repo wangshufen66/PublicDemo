@@ -2,4 +2,4 @@
 <!-- https://mp.weixin.qq.com/s/KsoSwA73PzGwYMqZOwUvNQ -->
 <!-- https://mp.weixin.qq.com/s/usDh1-Wzxrf4BftfWhwduA -->
 
-测试从 github 上推送到 2 个仓库
+github 和 gitee 同步!!!

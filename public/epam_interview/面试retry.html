@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>面试retry</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 要求：
+        请实现一个可以在给定时间内重试(retry)另一个函数的函数：
+        1.参数：
+        a、 第一个参数：指定最大重试次数的数字。
+        b、 第二个参数：返回true或false的函数。如果函数返回false，请重试。
+        c、 第三个参数：可选，两次重试之间的时间间隔（毫秒）。
+        2.返回值：Promise ：
+        a、 如果在给定的最大重试次数内成功，则Resolves
+        b、 如果在给定的最大重试次数后失败，则Rejects。
+       请求失败后，加入失败重试功能，如果5次全部失败，则返回失败结果，只要5次尝试中
+       有任意一次成功，则返回成功
+       验收标准：
+        •涵盖上述所有功能要求。
+        •单元测试（包括happy paths and edge cases）。
+       */
+
+      /**
+       * @param times 请求次数
+       * @param fn 绑定函数
+       * @param delay 延迟时间
+       */
+      const getData = () => {
+        // return new Promise((resolve, reject) => {
+        const result = Math.floor(Math.random() * 10);
+        console.log('随机数生成的值：', result);
+        // return result < 1 ? resolve(result) : reject(new Error(`${result}--执行失败--没找到数字小于1的`));
+        return result < 1 ? true : false;
+        // });
+      };
+
+      Promise.retry = (times, fn, delay = 500) => {
+        return new Promise((resolve, reject) => {
+          const tFn = () => {
+            if (fn()) {
+              console.log(`找到了小于1的数字--`);
+            } else {
+              if (times-- > 0) {
+                console.log(`还有${times}次机会`);
+                setTimeout(tFn, delay);
+              } else {
+                reject(`没找到`);
+              }
+            }
+            // fn()
+            //   .then((res) => {
+            //     console.log(`找到了小于1的数字--${res}`);
+            //   })
+            //   .catch((e) => {
+            //     if (times-- > 0) {
+            //       console.log(`还有${times}次机会`);
+            //       setTimeout(tFn, delay);
+            //     } else {
+            //       reject(e);
+            //     }
+            //   });
+          };
+          tFn();
+        });
+      };
+
+      Promise.retry(5, getData, 1000);
+    </script>
+  </body>
+</html>

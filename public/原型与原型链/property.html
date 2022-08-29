@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // (a == 1 && a == 2 && a == 3)
+      //   const a = {
+      //     i: 1,
+      //     [Symbol.toPrimitive]() {
+      //       return this.i++;
+      //     },
+      //   };
+      //   console.log(a == 1 && a == 2);
+      //   // 每次进行a == xxx时都会先经过Symbol.toPrimitive函数，自然也就可以实现a依次递增的效果
+      //   if (a == 1 && a == 2 && a == 3) {
+      //     console.log('前端胖头鱼'); // 前端胖头鱼
+      //   }
+      let a = [1, 2, 3];
+      console.log(a.toString());
+      console.log(a.join = a.shift);
+      if (a == 1 && a == 2 && a == 3) {
+        console.log('前端胖头鱼'); // 前端胖头鱼
+      }
+    </script>
+  </body>
+</html>

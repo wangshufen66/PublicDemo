@@ -1,0 +1,21 @@
+.example3 {
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+.example3:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+}
+.exampe .con{
+    width: 300px;
+    font-size: 15px;
+    background: #afddf3;
+    display: inline-block;
+    vertical-align: middle;
+}

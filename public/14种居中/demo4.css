@@ -1,0 +1,14 @@
+.example4 {
+    margin-top: 10px;
+    width: 400px;
+    height: 150px;
+    font-size: 0;
+    border: 1px solid #dcdcdc;
+}
+.example .con{
+    display: table;
+    width: 100px;
+    font-size: 15px;
+    background: #afddf3;
+    margin: 0 auto;
+}

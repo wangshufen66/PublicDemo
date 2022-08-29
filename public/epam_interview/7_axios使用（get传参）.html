@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css" />
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <title>温度查询</title>
+  </head>
+  <body>
+    <div id="mydiv">
+      <button @click="getData()">axios的get请求</button>
+      <div></div>
+      <el-button @click="visible = true">Button</el-button>
+      <el-dialog :visible.sync="visible" title="Hello world">
+        <p>Try Element</p>
+      </el-dialog>
+    </div>
+    <script>
+      let vm = new Vue({
+        el: '#mydiv',
+        data: function () {
+          return { visible: false };
+        },
+        methods: {
+          getData: function () {
+            this.$http.jsonp('http://www.weather.com.cn/data/city3jdata/china.html', {}).then(function (result) {
+              this.user = result.data;
+              console.log(result.data);
+            });
+            // axios.get(`http://www.weather.com.cn/data/city3jdata/china.html`).then(function (result) {
+            //   this.user = result.data;
+            //   console.log(result.data);
+            // });
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
