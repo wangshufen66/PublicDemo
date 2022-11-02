@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div>字体大小</div>
+    <div>划分为从凯瑟琳
+        <p>的精髓</p>
+        <span>eer </span>
+    </div>
+</body>
+
+<script>
+    var arr = [{
+        "occurTm": "2020-10-20",
+        "loc": "中国北京市无名区",
+        "lm": "花无名(地区)乡四环",
+        "rd": "四环",
+        "type": 28,
+        "typeName": "事故易发路段",
+        "roadCode": 7020211,
+        "roadTypeName": "快速路"
+    }, {
+        "occurTm": "2020-10-20",
+        "loc": "中国北京市无名区",
+        "lm": "南无名公益东桥",
+        "rd": "四环公无名",
+        "type": 28,
+        "typeName": "事故易发路段",
+        "roadCode": 7020211,
+        "roadTypeName": "快速路"
+    }, {
+        "occurTm": "2020-10-21",
+        "loc": "中国北京市无名区",
+        "lm": "卢无名乡银河大厦",
+        "rd": "三环",
+        "type": 28,
+        "typeName": "事故易发路段",
+        "roadCode": 7020211,
+        "roadTypeName": "快速路"
+    }, {
+        "occurTm": "2020-10-21",
+        "loc": "中国北京市无名区",
+        "lm": "无名街道",
+        "rd": "万无名路",
+        "type": 28,
+        "typeName": "事故易发路段",
+        "roadCode": 7020211,
+        "roadTypeName": "快速路"
+    }]
+
+    function getNewArr(arr) {
+        let newArr = []
+        arr.forEach((locationList, i) => {
+            let index = -1
+            let alreadyExists = newArr.some((newAddress, j) => {
+                if (locationList.occurTm === newAddress.occurTm) {
+                    index = j
+                    return true
+                }
+            })
+            if (!alreadyExists) {
+                newArr.push({
+                    occurTm: locationList.occurTm,
+                    loctionArr: [locationList]
+                })
+            } else {
+                newArr[index].loctionArr.push(locationList)
+            }
+        })
+        return newArr
+    }
+    console.log(getNewArr(arr))
+</script>
+
+</html>

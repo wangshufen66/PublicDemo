@@ -1,0 +1,29 @@
+<script>
+    let partList = [{
+        "电脑": "10"
+    }, {
+        "金坷垃": "5"
+    }];
+    let bb = '电脑:10;金坷垃:5'
+    partList.forEach(item => {})
+
+    var json = [{
+        "电脑": "10"
+    }, {
+        "金坷垃": "5"
+    }];
+    let s1 = ''
+    for (var i = 0, l = json.length; i < l; i++) {
+        for (var key in json[i]) {
+            s1 += key + ':' + json[i][key] + ';'
+        }
+
+    }
+
+
+    var reg = /#\{.*?\}/g;
+
+    var str = "#{UPDATE_法人TIME}-#{OP_CREATE_TIME}*#{非人防frfw}";
+
+    console.log(str.replace(reg, '${value}'));
+</script>

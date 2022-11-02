@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html style="height: 100%">
+  <head>
+    <meta charset="utf-8" />
+  </head>
+
+  <body style="height: 100%; margin: 0">
+    <div id="container" style="height: 100%"></div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+
+    <script type="text/javascript">
+      let dom = document.getElementById('container');
+      console.log(dom);
+
+      let myChart = echarts.init(dom);
+
+      var option = {
+        // color: ['#3398DB'],
+        title: {
+          // text: "放到我方認爲",
+        },
+        tooltip: {},
+        // 全局背景色
+        // backgroundColor: "#ff0",
+        itemStyle: {
+          // 阴影的大小
+          shadowBlur: 200,
+          // 阴影水平方向上的偏移
+          shadowOffsetX: 0,
+          // 阴影垂直方向上的偏移
+          shadowOffsetY: 0,
+          // 阴影颜色
+          shadowColor: 'rgba(0, 0, 0, 0.5)',
+        },
+        legend: {
+          // data:this.b,
+          data: ['总人数', '新增'],
+          // orient: 'horizontal', //垂直显示
+          // y: "top", //延Y轴居中
+          // x: "right" //居右显示
+          right: 100, //右邊距
+          top: 5, // 上邊距
+        },
+        // x軸的顏色
+        yAxis: {
+          axisLine: {
+            lineStyle: {
+              color: '#00a2ff',
+            },
+          },
+          // x軸的字體
+          axisLabel: {
+            show: true,
+            textStyle: {
+              color: '#323232',
+              fontSize: 12,
+              // top: 50, // 上邊距
+            },
+          },
+          // data: this.a
+          data: ['aa', 'bb', 'cc', 'dd', 'ss', 'ff', 'gg'],
+        },
+        xAxis: {
+          // y軸的顏色
+          axisLine: {
+            lineStyle: {
+              color: '#00a2ff',
+            },
+          },
+          // y軸的分割線顏色
+          splitLine: {
+            show: true,
+            lineStyle: {
+              color: 'rgba(0,162,255,0.2)',
+              width: 1,
+            },
+          },
+        },
+        series: [
+          {
+            label: {
+              normal: {
+                show: true,
+                // formatter:"{c}%",
+                position: 'top',
+                textStyle: {
+                  color: 'black',
+                },
+              },
+            },
+            name: '总人数',
+            barWidth: '35%',
+            type: 'bar',
+            // stack:"1",    // 如果stack一樣就會堆疊
+            // 重疊
+            barGap: '-100%',
+            //   data: this.b
+            // data: [50, 90, 200, 30, 100, 54, 79],
+            data: [100, 120, 130, 140, 100, 120, 100],
+          },
+          {
+              label: {
+                normal: {
+                    show: true,
+                    position:"top",
+                    textStyle: {
+                      color: 'black',
+                    }
+                }
+            },
+            name: '新增',
+            barWidth: '35%',
+            type: 'bar',
+            // stack:"1",    // 如果stack一樣就會堆疊
+            // barGap: '-100%',
+            //   data: this.b
+            // data: [45, 50, 100, 25, 100, 50, 79],
+            data: [10, 20, 10, 15, 10, 20, 15],
+          },
+        ],
+      };
+      // 使用刚指定的配置项和数据显示图表。
+
+      if (option && typeof option === 'object') {
+        myChart.setOption(option);
+      }
+    </script>
+  </body>
+</html>

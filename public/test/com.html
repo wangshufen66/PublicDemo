@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body></body>
+
+<script>
+    let componentList = [{
+        componentTag: 'designLabel',
+        componentId: 1630474722283,
+    }, {
+        componentTag: 'designInput',
+        componentId: 1630466030858,
+    }, {
+        componentTag: 'designInput',
+        componentId: 1630474791511,
+    }, {
+        componentTag: 'designSelect',
+        componentId: 1630474750149,
+    }, {
+        componentTag: 'designTimePicker',
+        componentId: 1630474801244,
+    }, {
+        componentTag: 'designNumber',
+        componentId: 1630474811552,
+    }, {
+        componentTag: 'designLabel',
+        componentId: 1630474827172,
+    }, {
+        componentTag: 'designTextArea',
+        componentId: 1630474878512,
+    }, {
+        componentTag: 'designLabel',
+        componentId: 1630474919087,
+    }, {
+        componentTag: 'designInput',
+        componentId: 1630474933752,
+    }, {
+        componentTag: 'designUpload',
+        componentId: 1630474944063,
+    }, {
+        componentTag: 'designUpload',
+        componentId: 1630475140126,
+    }, ]
+
+    console.log(componentList)
+
+    // for (let index = 0; index < componentList.length; index++) {
+    //     const element = componentList[index]
+    //     if (element.componentTag !== 'designLabel') {
+    //         newComList.push({
+    //             index: index,
+    //             loctionArr: [element],
+    //         })
+    //     } else {
+    //         ii += 1
+    //     }
+    // }
+
+    // componentList.forEach((locationList, i) => {
+    let newComList = []
+    let ii
+    let alreadyExists = true
+        // if (componentList[0].componentTag === 'designLabel') {
+    for (let index = 0; index < componentList.length; index++) {
+        const element = componentList[index]
+        ii = -1
+        if (element.componentTag === 'designLabel') {
+            ii += 1
+            newComList.push({
+                id: element.componentId,
+                index: ii,
+                elementList: [],
+            })
+        } else {
+            newComList[ii].elementList.push(element)
+        }
+    }
+    // }
+    // for (let index = 0; index < componentList.length; index++) {
+    //     const element = componentList[index]
+    //     ii = -1
+    //     if (componentList[0].componentTag === 'designLabel') {
+    //         if (element.componentTag === 'designLabel') {
+    //             ii += 1
+    //             newComList.push({
+    //                 id: element.componentId,
+    //                 index: ii,
+    //                 elementList: [],
+    //             })
+    //         } else {
+    //             newComList[ii].elementList.push(element)
+    //         }
+    //     } else {
+    //         ii = 0
+    //         if (element.componentTag !== 'designLabel' && alreadyExists) {
+    //             newComList.push({
+    //                 id: element.componentId,
+    //                 index: ii,
+    //                 elementList: [],
+    //             })
+    //             newComList[ii].elementList.push(element)
+    //             ii += 1
+    //             alreadyExists = true
+    //         } else {
+    //             alreadyExists = false
+    //             if (element.componentTag === 'designLabel') {
+    //                 ii += 1
+    //                 newComList.push({
+    //                     id: element.componentId,
+    //                     index: ii,
+    //                     elementList: [],
+    //                 })
+    //             } else {
+    //                 newComList[ii].elementList.push(element)
+    //             }
+    //         }
+    //     }
+    // }
+
+    console.log('ii: ', ii)
+    console.log(newComList)
+</script>
+
+</html>

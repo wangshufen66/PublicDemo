@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let arr1 = [
+        { id: 1, name: '111' },
+        { id: 2, name: '222' },
+        { id: 3, name: '333' },
+        { id: 4, name: '444' },
+        { id: 5, name: '555' },
+      ];
+      let a1 = { id: 2, name: 'erererer' };
+      arr1 = arr1.map((m) => {
+        if (m.id === a1.id) {
+          //   return a1;
+          return { ...m, ...a1  };
+        }
+        return m;
+      });
+      console.log(arr1);
+    </script>
+  </body>
+</html>

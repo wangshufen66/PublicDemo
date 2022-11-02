@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html style="height: 100%">
+
+<head>
+  <meta charset="utf-8">
+</head>
+
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.2.2/dist/echarts.min.js"></script>
+ 
+
+  <script type="text/javascript">
+    let dom = document.getElementById("container");
+    console.log(dom);
+
+    let myChart = echarts.init(dom);
+
+    let option = {
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          // Use axis to trigger tooltip
+          type: 'shadow' // 'shadow' as default; can also be 'line' or 'shadow'
+        }
+      },
+      legend: {},
+      grid: {
+        left: '3%',
+        right: '4%',
+        bottom: '3%',
+        containLabel: true
+      },
+      xAxis: {
+        type: 'value'
+      },
+      yAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      series: [
+
+        {
+          name: '新增',
+          type: 'bar',
+          stack: 'total',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          itemStyle: {
+            color: '#91CC75'
+          },
+          data: [10, 20, 10, 15, 10, 20, 15]
+        },
+        {
+          name: '总数',
+          type: 'bar',
+          stack: 'total',
+          // barGap: '-100%',
+          label: {
+            show: true
+          },
+          emphasis: {
+            focus: 'series'
+          },
+          itemStyle: {
+            // color: '#000'
+            color: '#73C0DE'
+          },
+          data: [100, 120, 130, 140, 100, 120, 100]
+        },
+      ]
+    };
+
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+  </script>
+</body>
+
+</html>

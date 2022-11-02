@@ -1,0 +1,55 @@
+<script>
+    let resultdata = [{
+        "ORD": 2,
+        "APP_ID": 281,
+        "ID": 468
+    }, {
+        "ORD": 1,
+        "APP_ID": 281,
+        "ID": 471
+    }, {
+        "ORD": 1,
+        "APP_ID": 281,
+        "ID": 472
+    }, {
+        "ORD": 1,
+        "APP_ID": 281,
+        "ID": 474
+    }, {
+        "ORD": 1,
+        "APP_ID": 281,
+        "ID": 488
+    }]
+
+    let activeValue = [
+        "ORD",
+        "ID"
+    ]
+    var newArray2 = [];
+
+    // for (var i = 0; i < resultdata.length; i++) {
+    //     // const ele = resultdata[i]
+    //     var newObject = {};
+    //     for (let index = 0; index < activeValue.length; index++) {
+    //         // const element = activeValue[index];
+    //         newObject[activeValue[index]] = resultdata[i][activeValue[index]]
+    //     }
+    //     newArray2.push(newObject)
+    // }
+    // // console.log(newArray2)
+
+
+    // console.log(Object.keys(resultdata[0]));
+
+    function handle(resultdata) {
+        let headerArr = Object.keys(resultdata[0])
+        let contentData = []
+        for (var key in resultdata) {
+            contentData.push(Object.values(resultdata[key]));
+        }
+
+        console.log(headerArr);
+        console.log(contentData);
+    }
+    handle(resultdata)
+</script>
